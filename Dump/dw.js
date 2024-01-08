@@ -1,15 +1,3 @@
-let next = document.querySelector('.next')
-let prev = document.querySelector('.prev')
-
-next.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
-    document.querySelector('.slide').appendChild(items[0])
-})
-
-prev.addEventListener('click', function(){
-    let items = document.querySelectorAll('.item')
-    document.querySelector('.slide').prepend(items[items.length - 1]) 
-})
 new Vue({
     el: "#app",
     data() {
@@ -22,43 +10,35 @@ new Vue({
         isTimerPlaying: false,
         tracks: [
           {
-                name: "DDU DU DDU DU 🔫 ",
-                artist: "BlackPink",
-                cover: "https://iili.io/H1hGJol.jpg",
-                source: "https://audio.jukehost.co.uk/FamrE48qfWUNWmskzgBfiFW5mbaSUCG7",
-                url: "https://www.youtube.com/watch?v=IHNzOHi8sJs&ab_channel=BLACKPINK",
-                favorited: true
-          },
-          {
-                name: "Playing With Fire 🔥",
-                artist: "BlackPink",
-                cover: "https://iili.io/H1hGFK7.jpg",
-                source: "https://audio.jukehost.co.uk/9t8OuMg1bqsR0JtyADcqKaXbTaLvGOkl",
-                url: "https://www.youtube.com/watch?v=9pdj4iJD08s&ab_channel=BLACKPINK",
-                favorited: false
-          },
-          {
-            name: "As If It's Your Last",
-            artist: "BlackPink",
-            cover: "https://iili.io/H1hGKl9.jpg",
-            source: "https://audio.jukehost.co.uk/cXSnf1QxAl4N7keT52hTID5wZC8Nmfu1",
-            url: "https://www.youtube.com/watch?v=Amq-qlqbjYA&ab_channel=BLACKPINK",
-            favorited: true
-          },
-          {
-            name: "Kill This Love 💔",
-            artist: "BlackPink",
-            cover: "https://iili.io/H1hGdV2.jpg",
-            source: "https://audio.jukehost.co.uk/XMq8hSwgPKbHkY4srMhPWEFqHSigxcNQ",
-            url: "https://www.youtube.com/watch?v=2S24-y0Ij3Y&ab_channel=BLACKPINK",
+            name: "Boy with Love",
+            artist: "BTS",
+            cover: "https://iili.io/H1hG2PS.jpg",
+            source: "https://audio.jukehost.co.uk/k1H7J0lBSzjvK8pGe5pb3lPJeBCfcJUz",
+            url: "https://www.youtube.com/watch?v=XsX3ATc3FbA&ab_channel=HYBELABELS",
             favorited: false
           },
           {
-            name: "Lovesick Girls",
-            artist: "BlackPink",
-            cover: "https://iili.io/H1hEyNf.jpg",
-            source: "https://audio.jukehost.co.uk/kmMdEcT0mVFDBlkcf1ZoydqaM19deMJ1",
-            url: "https://www.youtube.com/watch?v=dyRsYk0LyA8&ab_channel=BLACKPINK",
+            name: "Dynamite",
+            artist: "BTS",
+            cover: "https://iili.io/H1hGfSe.jpg",
+            source: "https://audio.jukehost.co.uk/w5el9uHEuw5yFJ1dPjeP5lMO78BbtRdr",
+            url: "https://www.youtube.com/watch?v=gdZLi9oWNZg&ab_channel=HYBELABELS",
+            favorited: true
+          },
+          {
+            name: "DNA",
+            artist: "BTS",
+            cover: "https://iili.io/H1hGCAb.jpg",
+            source: "https://audio.jukehost.co.uk/hhWaUJpcCrCCPi1S2wWup9uL1uVNjvOb",
+            url: "https://www.youtube.com/watch?v=MBdVXkSdhwU&ab_channel=HYBELABELS",
+            favorited: false
+          },
+          {
+            name: "Butter",
+            artist: "BTS",
+            cover: "https://iili.io/H1hGBHu.jpg",
+            source: "https://audio.jukehost.co.uk/X2kcaQZROQIikDD5P65ZetiaqdrZNX77",
+            url: "https://www.youtube.com/watch?v=WMweEpGlu_U&ab_channel=HYBELABELS",
             favorited: false
           }
         ],
@@ -178,7 +158,7 @@ new Vue({
         this.isTimerPlaying = true;
       };
   
-    
+      // this is optional (for preload covers)
       for (let index = 0; index < this.tracks.length; index++) {
         const element = this.tracks[index];
         let link = document.createElement('link');
